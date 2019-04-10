@@ -1,0 +1,40 @@
+模块：1. 记账，
+      2. 资产，
+      3. 报表，
+      4. 用户
+
+2. 资产：
+资产分类：现金，信用卡，借记卡，支付宝，微信，京东金融，股票，
+    基金，期货，卡券，新增分类
+二级分类：借款类，自有类
+table: AssetType
+id autonumber
+asset_name char
+detail_type char
+create_dt date
+
+table: Asset
+id autonumber
+userid lookup
+asset_typeid lookup
+asset_identification char
+asset_organization char
+bill_date char
+repayment_date char
+credit_limit char
+year_rate char
+comment char
+create_dt
+update_dt
+
+
+
+新增资产->用户ID
+        ->资产分类
+        ->标识ID或者尾号
+        ->所属机构
+        ->如果为借款类->账单日
+        ->如果为借款类->还款日
+        ->如果为借款类->额度
+        ->如果为自有类->年利率
+        ->备注
